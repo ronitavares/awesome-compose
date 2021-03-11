@@ -14,14 +14,14 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=example
+      - POSTGRES_DB=swapps
       - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    
+
   proxy:
     build: proxy
     ports:
       - 80:80
-    depends_on: 
+    depends_on:
       - backend
 volumes:
   db-data:
